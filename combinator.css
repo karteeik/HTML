@@ -1,0 +1,13 @@
+div.descendant p{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: red;
+}
+div.childd > p{
+    color: blue;
+}
+h1 + p{
+    color: blueviolet;
+}
+div.adj1 h1 ~ p{
+    color: chartreuse;
+}
