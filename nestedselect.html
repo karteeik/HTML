@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nested Select Example</title>
+</head>
+<body>
+    <h2>Select a Category and Sub-Category</h2>
+
+    <!-- Main Category Select -->
+    <label for="category">Category:</label>
+    <select id="category" onchange="updateSubCategories()">
+        <option value="">Select a Category</option>
+        <option value="fruits">Fruits</option>
+        <option value="vegetables">Vegetables</option>
+    </select>
+
+    <!-- Sub-Category Select (Options updated based on the Category) -->
+    <label for="subcategory">Sub-Category:</label>
+    <select id="subcategory">
+        <option value="">Select a Sub-Category</option>
+    </select>
+
+    <script>
+        // Object with categories and sub-categories
+        const subCategories = {
+            fruits: ["Apple", "Banana", "Orange", "Grapes"],
+            vegetables: ["Carrot", "Broccoli", "Spinach", "Pepper"]
+        };
+
+        function updateSubCategories() {
+            const category = document.getElementById("category").value;
+            const subCategorySelect = document.getElementById("subcategory");
+
+            // Clear existing options
+            subCategorySelect.innerHTML = '<option value="">Select a Sub-Category</option>';
+
+            // Populate options based on the selected category
+            if (subCategories[category]) {
+                subCategories[category].forEach(subCategory => {
+                    const option = document.createElement("option");
+                    option.value = subCategory.toLowerCase();
+                    option.textContent = subCategory;
+                    subCategorySelect.appendChild(option);
+                });
+            }
+        }
+    </script>
+</body>
+</html>

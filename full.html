@@ -1,13 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>kartik</title>
+    <title>Document</title>
+    <style>
+        .container {
+            display: flex;
+            gap: 50px;
+            padding: 20px;
+            justify-content: center;
+
+            &:hover>:not(:hover) {
+                filter: blur(2px);
+                opacity: 0.4;
+            }
+        }
+        /* .container:hover>:not(:hover){
+            filter: blur(2px);
+            opacity: 0.4;
+        } */
+
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: teal;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
 </head>
+
 <body>
-    <div>
-        <span>jhii</span>
+    <div class="container">
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
     </div>
 </body>
+
 </html>
